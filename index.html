@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Kiesha Taringka!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #373636 0%, #a89066 99%, #a89066 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Navigasi Halaman */
+        .page {
+            display: none; /* Semua halaman disembunyikan secara default */
+        }
+
+        .page.active {
+            display: block; /* Halaman aktif ditampilkan */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typography & Komponen */
+        h1 {
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .emoji {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #5c5758;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #736f6f;
+            transform: scale(1.05);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .card {
+            background: #fff0f3;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 5px solid #6c6263;
+            text-align: left;
+        }
+
+        .card h3 {
+            color: #6c6263;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HALAMAN 1: Pembuka / Cover -->
+        <div id="page1" class="page active">
+            <div class="emoji">🎂🎉</div>
+            <h1>Special card digital gae awakmu!</h1>
+            <p>Kepoin Web ku, Pasti You Terharu. Klik tombol di bawah untuk melihat kejutan kecil ini.</p>
+            <button onclick="nextPage(2)">Buka Kejutan ➡️</button>
+        </div>
+
+        <!-- HALAMAN 2: Lagu / Video YouTube -->
+        <div id="page2" class="page">
+            <div class="emoji">🎵</div>
+            <h1>Lagu Khusus Hari Ini</h1>
+            <p>Tak kasih lagu keramatku!</p>
+            
+            <div class="video-container">
+                <!-- Lagu: Nadhif Basalamah - Bergema Sampai Selamanya (Versi Embeddable) -->
+                <iframe src="https://www.youtube.com/embed/rlz0ITBc_18" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+
+            <button onclick="nextPage(1)">⬅️ Kembali</button>
+            <button onclick="nextPage(3)">Lanjut ➡️</button>
+        </div>
+
+        <!-- HALAMAN 3: Ucapan Ulang Tahun -->
+        <div id="page3" class="page">
+            <div class="emoji">💌</div>
+            <h1>Selamat Ulang Tahun Besti!</h1>
+            
+            <div class="card">
+                <h3>Semoga Panjang Umur 🌟</h3>
+                <p>Semoga di usiamu yang baru ini, kamu selalu diberikan kesehatan, kebahagiaan, dan kemudahan dalam meraih semua cita-citamu. Ojok gopo rabi, kene sek imut-imut.</p>
+            </div>
+
+            <div class="card">
+                <h3>Tetap Jadi Orang Baik ✨</h3>
+                <p>Terima kasih sudah menjadi sosok yang luar biasa. Semoga hal-hal baik selalu menyertai setiap langkahmu. Ojok kakean nangis!</p>
+            </div>
+
+            <button onclick="nextPage(2)">⬅️ Kembali</button>
+            <button onclick="nextPage(4)">Lanjut ➡️</button>
+        </div>
+
+        <!-- HALAMAN 4: Penutup & Harapan -->
+        <div id="page4" class="page">
+            <div class="emoji">🎁🎈</div>
+            <h1>Doa & Harapan Terakhir</h1>
+            <p>Semua impianmu tahun ini bisa terwujud satu per satu. Selamat menikmati hari bahagiamu! Semoga di tahun depan sisa bahagianya aja ya! </p>
+            <p><b>— From the future girlfriend of Andik or Zakky 💖</b></p>
+            
+            <button onclick="nextPage(3)">⬅️ Kembali</button>
+            <button onclick="nextPage(1)">🔄 Ulangi Dari Awal</button>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT SIMPEL -->
+    <script>
+        function nextPage(pageNumber) {
+            // Sembunyikan semua halaman
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Tampilkan halaman yang dipilih
+            const selectedPage = document.getElementById('page' + pageNumber);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
